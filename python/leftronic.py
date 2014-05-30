@@ -18,6 +18,8 @@ class Leftronic(object):
     Provides access to Leftronic Custom Data API
     """
 
+    __version__ = '1.5.0'
+
     def __init__(self, auth_key):
         self.access_key = auth_key
         self.api_url = 'https://www.leftronic.com/customSend'
