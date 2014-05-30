@@ -1,0 +1,23 @@
+{
+  "author": "Cesar Del Solar <cesar@leftronic.com>",
+  "name": "leftronic",
+  "description": "Leftronic Dashboard API",
+  "version": "0.1.1",
+  "homepage": "https://www.leftronic.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sonofabell/leftronic.git"
+  },
+  "keywords": [
+    "dashboard",
+    "analytics",
+    "real-time",
+    "socket"
+  ],
+  "engine": {
+    "node": ">=0.2"
+  },
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {}
+}
