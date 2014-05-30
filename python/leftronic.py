@@ -255,11 +255,11 @@ class Leftronic(object):
             self.encryptStreams(parameters)
 
         # Convert to JSON
-        jsonData = json.dumps(parameters)
+        json_data = json.dumps(parameters)
 
-        logger.debug(jsonData)
+        logger.debug(json_data)
         # Make request
-        response = urllib2.urlopen(self.api_url, jsonData)
+        response = urllib2.urlopen(self.api_url, json_data)
         return response.read()
 
     def encryptText(self, text):
