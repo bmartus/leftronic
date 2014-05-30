@@ -229,6 +229,16 @@ class Leftronic(object):
         return {'streamName': stream_name,
                 'point': point}
 
+    def pushHtml(self, stream_name, html_string):
+        """
+        Pushes HTML to an HTML widget.
+        """
+        return self.postData(self.populateHtml(stream_name, html_string))
+
+    def populateHtml(self, stream_name, html):
+        return {'streamName': stream_name,
+                'point': {'html': html}}
+
     def clear(self, stream_name):
         parameters = {'streamName': stream_name,
                       'command': 'clear'}
