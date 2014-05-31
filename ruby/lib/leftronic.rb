@@ -62,23 +62,27 @@ class Leftronic
     post stream, 'table' => data_rows
   end
 
+  def clear(stream)
+    post stream, 'clear', 'command'
+  end
+
   protected
 
-  def post(stream, params)
-    request = build_request(stream, params)
+  def post(stream, params, type='point')
+    request = build_request(stream, params, type)
     connection = build_connection
     connection.start{|http| http.request request}
     params
   end
 
-  def build_request(stream, params)
+  def build_request(stream, params, type)
     request = Net::HTTP::Post.new @url.request_uri
     request['Accept'] = 'application/json'
     request['Content-Type'] = 'application/json'
     request.body = {
       'accessKey' => @key,
       'streamName' => stream,
-      'point' => params
+      type => params
     }.to_json
     request
   end
