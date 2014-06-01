@@ -4,10 +4,77 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 </head>
-<body>
-<form action="pushNumber.php" method="get">
-Number: <input type="text" name="number" /><BR />
-Stream name: <input type="text" name="streamname" /><BR />
-<input type="submit" />
-</form>
-</body>
+    <body>
+        <p>
+            <strong>pushNumber($streamName, $point)</strong>
+            <form action="./test/pushNumber.php" method="get">
+                Number: <input type="text" name="point" /><br />
+                Stream name: <input type="text" name="streamname" /><br />
+                Access Key: <input type="text" name="accesskey" /><br />
+                <input type="submit" />
+            </form>
+        </p>
+        <br />
+        <p>
+            <strong>pushGeo($streamName, $lati, $longi, $color=Null)</strong>
+            <form action="./test/pushGeo.php" method="get">
+                Latitude: <input type="text" name="lati" /><br />
+                Longitude: <input type="text" name="longi" /><br />
+                Color: <input type="text" name="color" /><br />
+                Stream name: <input type="text" name="streamname" /><br />
+                Access Key: <input type="text" name="accesskey" /><br />
+                <input type="submit" />
+            </form>
+        </p>
+        <br />
+        <p>
+            <strong>pushText($streamName, $myTitle, $myMsg)</strong>
+            <form action="./test/pushText.php" method="get">
+                Title: <input type="text" name="myTitle" /><br />
+                Message: <input type="text" name="myMsg" /><br />
+                Stream name: <input type="text" name="streamname" /><br />
+                Access Key: <input type="text" name="accesskey" /><br />
+                <input type="submit" />
+            </form>
+        </p>
+        <br />
+        <p>
+            <strong>pushHtml($streamName, $html)</strong>
+            <form action="./test/pushHtml.php" method="get" id="htmlForm">
+                HTML: <textarea name="html" form="htmlForm" rows="6" cols="50"/></textarea><br />
+                Stream name: <input type="text" name="streamname" /><br />
+                Access Key: <input type="text" name="accesskey" /><br />
+                <input type="submit" />
+            </form>
+        </p>
+        <br />
+        <p>
+            <strong>pushImage($streamName, $imgURL)</strong>
+            <form action="./test/pushImage.php" method="get">
+                Image URL: <input type="text" name="imgURL" /><br />
+                Stream name: <input type="text" name="streamname" /><br />
+                Access Key: <input type="text" name="accesskey" /><br />
+                <input type="submit" />
+            </form>
+        </p>
+        <br />
+        <p>
+            <strong>pushLabel($streamName, $label)</strong>
+            <form action="./test/pushLabel.php" method="get">
+                Label: <input type="text" name="label" /><br />
+                Stream name: <input type="text" name="streamname" /><br />
+                Access Key: <input type="text" name="accesskey" /><br />
+                <input type="submit" />
+            </form>
+        </p>
+        <br />
+        <p>
+            <strong>clear($streamName)</strong>
+            <form action="./test/clear.php" method="get">
+                Stream name: <input type="text" name="streamname" /><br />
+                Access Key: <input type="text" name="accesskey" /><br />
+                <input type="submit" />
+            </form>
+        </p>
+    </body>
+</html>
