@@ -4,20 +4,19 @@ Leftronic API Documentation
 What is Leftronic?
 ------------------
 
-[Leftronic](https://beta.leftronic.com) makes powerful dashboards for business intelligence.
+[Leftronic](https://www.leftronic.com) makes powerful dashboards for business intelligence.
 
 * Colorful and interactive data visualizations
 * Templates to get you started right away
 * Drag-and-drop editor makes it easy for anyone to create a powerful dashboard, customized to their needs
-* Integration with Google Analytics, Twitter, Chartbeat, Zendesk, Basecamp, Pivotal Tracker, Facebook, and more to come!
+* Integration with Google Analytics, Twitter, Chartbeat, Zendesk, Basecamp, Pivotal Tracker, Facebook, and [more](https://www.leftronic.com/services/)!
 * Dashboards can be protected or shared with a shortened URL
-* Powerful API's for PHP, Python, Ruby, and Java
+* Powerful API's for PHP, Python, Ruby, and Node
 * Python Package and Ruby Gem
+* For full documentation see our [API](https://www.leftronic.com/api/) page
 
 Technical Notes
 ---------------
-
-We also suggest checking out our [API](https://www.leftronic.com/api) page. It has JSON and CURL examples in addition to a test form to send data to your custom widgets.
 
 All API requests are made by sending a POST request to https://www.leftronic.com/customSend with a properly formatted JSON packet. We do not support XML.
 
@@ -29,7 +28,7 @@ If you haven't already, create an account at https://www.leftronic.com/accounts/
 PHP
 ---
 
-Start by downloading the most recent version of our PHP API at NEEDS LINK
+Start by downloading the most recent version of our PHP API at (https://github.com/leftronic/leftronic/tree/master/php).
 
 ### Dependencies
 
@@ -81,21 +80,12 @@ $listArray = array(array("listItem" => "Elizabeth"), array("listItem" => "Marsha
 $update->pushList("yourListStream", $listArray);
 ```
 
+See our [PHP API page](https://www.leftronic.com/api/#php) for full documentation.
+
 Python
 ------
 
-**_Note_**: We also have a Leftronic Python Package that offers the same functionality. You can download it on [Github](NEEDS LINK) or on the [Python Package Index](http://pypi.python.org/pypi/leftronic).
-
-Start by downloading the most recent version of our Python API at NEEDS LINK.
-
-### Dependencies
-
-[urllib2](http://docs.python.org/library/urllib2.html) and [JSON](http://docs.python.org/library/json.html).
-
-```python
-import urllib2
-import json
-```
+Start by downloading the most recent version of our Python API at https://github.com/leftronic/leftronic/tree/master/python. You can also download a package on the [Python Package Index](https://pypi.python.org/pypi/leftronic) or [Github](https://github.com/leftronic/leftronic/tree/master/python/dist). You may also use pip to install the Leftronic package with `pip install leftronic`.
 
 Import the file. Your location may vary.
 
@@ -149,12 +139,12 @@ listArray = [{"listItem": "Elizabeth"}, {"listItem": "Marshall"}, {"listItem": "
 update.pushList("yourListStream", listArray)
 ```
 
+See our [Python API page](https://www.leftronic.com/api/#python) for full documentation.
+
 Ruby
 ----
 
-**_Note_**: We also have a Leftronic Ruby Gem that offers the same functionality. You can download it on [Github](https://github.com/leftronic/leftronic/) or on [RubyGems](https://rubygems.org/gems/leftronicapi).
-
-Start by downloading the most recent version of our Ruby API at https://github.com/leftronic/leftronic.
+Start by downloading the most recent version of our Ruby API at https://github.com/leftronic/leftronic/tree/master/ruby/lib. You can also download a Gem file on the [RubyGems](https://rubygems.org/gems/leftronicapi) or [Github](https://github.com/leftronic/leftronic/tree/master/ruby). You may also use gem to install the Leftronic package with `gem install leftronicapi`.
 
 ### Dependencies
 
@@ -218,6 +208,8 @@ listArray = Array[{"listItem" => "Elizabeth"}, {"listItem" => "Marshall"}, {"lis
 
 update = Leftronic.pushList("yourListStream", listArray)
 ```
+
+See our [Ruby API page](https://www.leftronic.com/api/#ruby) for full documentation.
 
 Java
 ----
