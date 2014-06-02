@@ -1,4 +1,4 @@
-### Node.js Leftronic Package documentation
+### Node.js Leftronic API Package documentation
 
 Instantiate the Leftronic client as follows:
 
@@ -9,7 +9,7 @@ var Leftronic = require('leftronic').createClient('my_api_key');
 Then use the various push... functions as follows:
 
 ```javascript
-Leftronic.pushNumber({streamName: 'numberStream', 
+Leftronic.pushNumber({streamName: 'numberStream',
 		      number: 35,
 		      suffix: '%'},
 		      function(err, result) {
@@ -18,4 +18,4 @@ Leftronic.pushNumber({streamName: 'numberStream',
 			  });
 ```
 
-More docs coming soon.
+See https://www.leftronic.com/api/#node-js for full documentation.
