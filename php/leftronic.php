@@ -106,7 +106,8 @@ class Leftronic {
 	}
 
 	public function pushTable($streamName, array $header, array $tableRows) {
-		$tableRows[-1] = $header;
+		# Add header row on to table data
+		$tableRows = array_merge(array($header), $tableRows);
 		$parameters = array('accessKey' => $this->accessKey,
 			'streamName' => $streamName,
 			'point' => array('table' => $tableRows));
