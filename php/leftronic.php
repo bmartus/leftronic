@@ -117,6 +117,23 @@ class Leftronic {
 		$this->postData($jsonData);
 	}
 
+	public function pushPair($streamName, array $x, array $y) {
+		if (count($x) != count($y)) {
+			trigger_error("Input array are unequal length.");
+		}
+		$point = array();
+		for ($i=0; $i<count($x); $i++) {
+			$point[] = array('x' => $x[$i], 'y' => $y[$i]);
+		}
+		$parameters = array('accessKey' => $this->accessKey,
+			'streamName' => $streamName,
+			'point' => $point);
+		# Convert to JSON
+		$jsonData = json_encode($parameters);
+		# Make request
+		$this->postData($jsonData);
+	}
+
 	public function clear($streamName) {
 		$parameters = array('accessKey' => $this->accessKey,
 			'streamName' => $streamName,
