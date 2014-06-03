@@ -62,6 +62,35 @@ class Leftronic
     post stream, 'table' => data_rows
   end
 
+  # Push an image url to an image widget
+  def push_image(stream, img_url)
+    post stream, 'imgUrl' => img_url
+  end
+
+  # Push to a label widget
+  def push_label(stream, label)
+    post stream, 'label' => label
+  end
+
+  # Push to an xy graph
+  def push_pair(stream, x, y)
+    if (x.class == Array) and (y.class == Array)
+      # Check that x and y are the same length
+      if x.length != y.length
+        raise 'Unequal array lengths.'
+      end
+      point = []
+      for i in 0..x.length - 1
+        point[i] = {'x' => x[i], 'y' => y[i]}
+      end
+    else
+      # Just push a single point
+      point = {'x' => x, 'y' => y}
+    end
+    post stream, point
+  end
+
+  # Clear a widget
   def clear(stream)
     post stream, 'clear', 'command'
   end
