@@ -1,0 +1,15 @@
+{
+    "name": "bmartus/leftronic",
+    "description": "Leftronic",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brandon Martus",
+            "email": "bmartus@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+    },
+    "minimum-stability": "stable"
+}
