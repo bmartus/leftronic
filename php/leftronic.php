@@ -62,6 +62,18 @@ class Leftronic {
 		# Make request
 		$this->postData($jsonData);
 	}
+	
+	public function pushChart($streamName, array $leaderArray) {
+		### Pushing an array to a Leaderboard widget
+		$parameters = array('accessKey' => $this->accessKey, 
+			'streamName' => $streamName, 
+			'point' => array(
+			'chart' => $leaderArray));
+		# Convert to JSON
+		$jsonData = json_encode($parameters);
+		# Make request
+		$this->postData($jsonData);
+	}
 
 	public function pushList($streamName, array $listArray) {
 		### Pushing an array to a List widget
@@ -111,6 +123,18 @@ class Leftronic {
 		$parameters = array('accessKey' => $this->accessKey,
 			'streamName' => $streamName,
 			'point' => array('table' => $tableRows));
+		# Convert to JSON
+		$jsonData = json_encode($parameters);
+		# Make request
+		$this->postData($jsonData);
+	}
+	
+	public function pushTableRow($streamName, array $tableRowArray) {
+		### Pushing an array to a List widget
+		$parameters = array('accessKey' => $this->accessKey, 
+			'streamName' => $streamName, 
+			'point' => array(
+			'tableRow' => $tableRowArray));
 		# Convert to JSON
 		$jsonData = json_encode($parameters);
 		# Make request
